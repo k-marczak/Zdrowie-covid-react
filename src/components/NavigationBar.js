@@ -35,14 +35,14 @@ export const NavigationBar = () => {
     return (
         <Styles>
             <Container>
-                <Navbar scrolling fixed="top" variant="dark" expand="lg">
+                <Navbar collapseOnSelect scrolling fixed="top" variant="dark" expand="lg">
                     <Navbar.Brand href="/">Zdrowie Covid <GiHealthNormal/>  </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto ml-auto">
-                        <Nav.Link><Link to='/'> Informacje o covid </Link></Nav.Link>
+                        <Nav.Link eventKey="1"><Link to='/'> Informacje o covid </Link></Nav.Link>
                         
-                        <Nav.Link><Link to='/about'> Pomoc1 </Link></Nav.Link>
+                        <Nav.Link eventKey="2"><Link to='/about'> Pomoc1 </Link></Nav.Link>
                         <Nav.Link to="/update">Aktualizacje</Nav.Link>
                         <Nav.Link to="/contact">Kontakt</Nav.Link>
                         </Nav>
