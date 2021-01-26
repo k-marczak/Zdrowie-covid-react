@@ -39,10 +39,10 @@ export const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto ml-auto">
-                        <Nav.Link href="/">Informacje o Covid</Nav.Link>
-                        <Nav.Link href="/about">Pomoc</Nav.Link>
-                        <Nav.Link href="/update">Aktualizacje</Nav.Link>
-                        <Nav.Link href="/contact">Kontakt</Nav.Link>
+                        <Nav.Link to="/">Informacje o Covid</Nav.Link>
+                        <Nav.Link to="/about">Pomoc</Nav.Link>
+                        <Nav.Link to="/update">Aktualizacje</Nav.Link>
+                        <Nav.Link to="/contact">Kontakt</Nav.Link>
                         </Nav>
                         <Form inline>
                         <FormControl type="text" placeholder="Szukaj..." className="mr-sm-2" />
