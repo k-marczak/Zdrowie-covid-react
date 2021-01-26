@@ -11,17 +11,17 @@ import { NavigationBar } from './components/NavigationBar';
 function App() {
   return (
     <>
-      <NavigationBar />
+      <Router>
         <Layout>
-            <Router>
-              <Switch>
+          <NavigationBar /> 
+            <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
                 <Route component={NoMatch} />
               </Switch>
-            </Router>
           </Layout>        
+      </Router>
     </>
   );
 }

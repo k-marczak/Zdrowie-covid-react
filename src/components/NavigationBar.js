@@ -3,6 +3,7 @@ import { Nav, Navbar, Form, FormControl, Button, Container } from 'react-bootstr
 import styled from 'styled-components';
 import { GiHealthNormal } from 'react-icons/gi';
 import { GoSearch } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 
 
@@ -39,10 +40,11 @@ export const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto ml-auto">
-                        <Nav.Link href="/">Informacje o Covid</Nav.Link>
-                        <Nav.Link href="/about">Pomoc</Nav.Link>
-                        <Nav.Link href="/update">Aktualizacje</Nav.Link>
-                        <Nav.Link href="/contact">Kontakt</Nav.Link>
+                        <Nav.Link><Link to='/'> Informacje o covid </Link></Nav.Link>
+                        
+                        <Nav.Link><Link to='/about'> Pomoc1 </Link></Nav.Link>
+                        <Nav.Link to="/update">Aktualizacje</Nav.Link>
+                        <Nav.Link to="/contact">Kontakt</Nav.Link>
                         </Nav>
                         <Form inline>
                         <FormControl type="text" placeholder="Szukaj..." className="mr-sm-2" />
