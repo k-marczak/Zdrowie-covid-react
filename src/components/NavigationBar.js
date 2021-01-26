@@ -42,9 +42,9 @@ export const NavigationBar = () => {
                         <Nav className="mr-auto ml-auto">
                         <Nav.Link eventKey="1"><Link to='/'> Informacje o covid </Link></Nav.Link>
                         
-                        <Nav.Link eventKey="2"><Link to='/about'> Pomoc1 </Link></Nav.Link>
-                        <Nav.Link to="/update">Aktualizacje</Nav.Link>
-                        <Nav.Link to="/contact">Kontakt</Nav.Link>
+                        <Nav.Link eventKey="2"><Link to='/about'> Pomoc </Link></Nav.Link>
+                        <Nav.Link eventKey="3"><Link to='/update'> Aktualizacje </Link></Nav.Link>
+                        <Nav.Link eventKey="4"><Link to='/contact'> Kontakt </Link></Nav.Link>
                         </Nav>
                         <Form inline>
                         <FormControl type="text" placeholder="Szukaj..." className="mr-sm-2" />
