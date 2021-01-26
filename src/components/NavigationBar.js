@@ -13,7 +13,7 @@ const Styles = styled.div`
         @media screen and (min-width: 992px) {
         
             height: 72px;
-    
+        }
     }
 
     .navbar-brand, .navbar-nav .nav-link {
@@ -26,7 +26,7 @@ const Styles = styled.div`
     }
 
     
-`
+`;
 
 
 
