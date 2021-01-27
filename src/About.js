@@ -1,34 +1,52 @@
 import React from 'react';
-import { Jumbotron, Button, Container, Alert, Toast  } from 'react-bootstrap';
+import { Jumbotron, Button, Container, Alert, Row, Col  } from 'react-bootstrap';
 import image from './assets/image.jpg'
-import image2 from './assets/it2.jpg'
+import image2 from './assets/image2.jpg'
 import image3 from './assets/it4.jpg'
+import { GrMap } from 'react-icons/gr';
+import { FcQuestions } from 'react-icons/fc';
+import { FaNewspaper } from 'react-icons/fa';
+
 
 import styled from 'styled-components'
+import Footer from './components/Footer';
 
 const Styles = styled.div`
-    
 
-    .container{
-        width: 100vw;
-    }
-
-    .alert{
-        position: relative;
-        top: 520px;
-    }
-
-
-    .jumbotron{
+    .jumbotron1{
        
-        width: 100vw;
-        left: 0;
-        right: 0;
+        
+        
         height: 400px;
         background: url(${image}) no-repeat fixed bottom;
         background-size: cover;
         z-index: -2;
     }
+
+    .top{
+        display: flex;
+        padding: 10px;
+        height: 40px;
+        
+    }
+
+    .bottom{
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .jumbotron2{
+        margin-top: 100px;
+        height: 400px;
+        background: url(${image2}) no-repeat fixed bottom;
+    }
+
+
+    .jumbotron2 .container p{
+        font-weight: 500;
+        font-size: 17px;
+    }
+    
 
 `;
 
@@ -36,7 +54,7 @@ export const About = () => {
     return (
         <Styles>
             
-            <Jumbotron fluid style={{marginTop: '72px'}}>
+            <Jumbotron className="jumbotron1" fluid style={{marginTop: '72px'}}>
                 <div className="overlay"></div>
                 <Container>
                     <h1 style={{marginTop: '40px'}}> Potrzebujesz pomocy? </h1>
@@ -48,7 +66,8 @@ export const About = () => {
                 </Container>
             </Jumbotron>
 
-            <Alert variant="info">
+            <Container>
+            <Alert variant="info" style={{marginTop: '50px'}}>
                 <Alert.Heading>O szczepionce na dedykowanej infolinii </Alert.Heading>
                 <p>
                 Szczepionka przeciwko COVID-19 to temat, który nasuwa wiele pytań. Zależy nam, aby każda osoba mogła rozwiać swoje wątpliwości i znaleźć odpowiedź na nurtujące pytania. Dlatego też uruchomiliśmy bezpłatną i całodobową infolinię.
@@ -58,24 +77,71 @@ export const About = () => {
                 Jeśli dzwonisz z zagranicy lub gdy Twój operator nie obsługuje numerów specjalnych, zadzwoń pod numer 22 12 23 212.
                 </p>
             </Alert>
+            </Container>
             
-            <Toast>
-                <Toast.Header>
-                <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-                <strong className="mr-auto">Bootstrap</strong>
-                <small>just now</small>
-                </Toast.Header>
-                <Toast.Body>See? Just like this.</Toast.Body>
-            </Toast>
-            <Toast>
-                <Toast.Header>
-                <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt="" />
-                <strong className="mr-auto">Bootstrap</strong>
-                <small>2 seconds ago</small>
-                </Toast.Header>
-                <Toast.Body>Heads up, toasts will stack automatically</Toast.Body>
-            </Toast>
+            <Container>
+                <h1 style={{fontSize: '35px', marginTop: '50px',marginBottom: '20px', marginLeft: '10px' }}>Dowiedz się</h1>
+                <Row>
+                    <Col>
+                        <div className="top">
+                            <GrMap size={42} style={{marginRight: '10px'}} />
+                            <h3>Gdzie zrobić test?</h3>
+                        </div>  
+                        <div className="bottom">
+                            <p>Wykaz punktów, w których można 
+                            wykonać test na obecność koronawirusa</p>
+                            <Button variant="primary">Więcej...</Button>
+                        </div>
+                        
+                       
+                    </Col>
+                    <Col>
+                        <div className="top">
+                            <FcQuestions size={42} style={{marginRight: '10px'}} />
+                            <h3>Pytania i odpowiedzi</h3>
+                        </div>  
+                        <div className="bottom">
+                            <p>Poznaj odpowiedzi na najczęściej zadawane pytania dotyczące koronawirusa</p>
+                            <Button variant="primary">Więcej...</Button>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className="top" >
+                            <FaNewspaper size={42} style={{marginRight: '10px'}} />
+                            <h3 style={{marginTop: '-10px'}}>Aktualne zasady i ograniczenia</h3>
+                        </div>  
+                        <div className="bottom">
+                            <p>Poznaj aktualne zasady i obostrzenia</p>
+                            <Button variant="primary" style={{marginTop: '22px'}}>Więcej...</Button>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
 
+
+            <Jumbotron className="jumbotron2" fluid>
+                <Container>
+                    <h2 style={{fontSize: '32px'}}>Szczepienia przeciw COVID-19</h2>
+                    <p style={{marginTop: '30px'}}>
+                    - w placówkach POZ
+                    </p>
+                    <p>
+                    - w innych placówkach medycznych
+                    </p>
+                    <p>
+                    - w mobilnych zespołach szczepiących
+                    </p>
+                    <p>
+                    - w centrach szczepiennych szpitali rezerwowych
+                    </p>
+
+                    <Button variant="light">DOWIEDZ SIĘ WIĘCEJ</Button> 
+
+                </Container>
+            </Jumbotron>
+
+            
+            <Footer />
             
 
             
