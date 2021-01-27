@@ -11,14 +11,42 @@ import Footer from './components/Footer';
 
 
 const Styles = styled.div`
+
+    .col h1{
+        width: 90%;
+        margin: 0 auto;
+    }
+
      .col1 h3{
-        text-align: center;
+        
+        width: 90%;
+        margin: 15px auto;
+        font-size: 23px;
     }
 
     .col1 p{
         margin-top: 20px;
         padding: 10px;
         line-height: 30px;
+        width: 90%;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1200px) {
+            line-height: 20px;
+        } 
+
+        @media screen and (max-width: 800px) {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+    }
+
+    .col2 .image{
+        @media screen and (max-width: 800px) {
+            margin-top: 40px;
+            margin-right: 20px;
+        }
     }
 
     .jumbotron1{
@@ -29,6 +57,8 @@ const Styles = styled.div`
        background: url(${image1}) no-repeat bottom;
        background-size: cover;
        z-index: -2;
+
+      
    }
 
    .cases{
@@ -51,6 +81,71 @@ const Styles = styled.div`
        background-size: cover;
        z-index: -2;
    }
+
+   .heroSection1{
+
+        @media screen and (max-width: 800px) {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+        } 
+
+       
+   }
+
+   .heroSection2 .row{
+       h1{
+           font-size: 34px;
+       }
+
+       @media screen and (max-width: 800px) {
+           display: grid;
+           grid-template-columns: 1fr;
+           text-align: center;
+       }
+   }
+
+   .heroSection2 .row .col2 .image{
+        @media screen and (max-width: 1000px) {
+            height: 230px !important;
+    }
+   }
+
+   .heroSection2 .row .col2{
+       margin-top: -40px;
+   }
+   .heroSection2 .row .col1{
+       margin-top: 60px;
+   }
+
+   .jumbotron2 .container .row .col1{
+
+        @media screen and (max-width: 1200px) {
+            position: relative;
+            bottom: 30px;    
+        }
+
+   }
+
+    .jumbotron2 .container .row .col1 h1{
+
+        @media screen and (max-width: 1000px) {
+            font-size: 28px;
+        }
+                
+    }
+
+    .jumbotron2 .container .row .col1 .img{
+        @media screen and (max-width: 1000px) {
+            height: 30px !important;
+        }
+    }
+
+    .jumbotron2 .container .row {
+        
+    }
+
+   
 `
 
 
@@ -58,10 +153,10 @@ const Styles = styled.div`
 export const Update = () => {
     return (
         <Styles>
-            <div style={{marginTop: '190px'}} />
+            <div style={{marginTop: '150px'}} />
             
             <Container>
-                <Row>
+                <Row className="heroSection1">
                     <Col className="col1">
                         <h1>Pokonajmy razem koronawirusa!</h1>
                         <h3>Ściągnij, uruchom – dbaj o siebie i innych.</h3>
@@ -88,7 +183,7 @@ export const Update = () => {
             </Jumbotron>
 
 
-            <Container style={{marginTop: '100px'}}>
+            <Container className="heroSection2" style={{marginTop: '100px'}}>
                 <Row>
                     <Col className="col2">
                         <img src={image2} style={{height: '320px'}} className="image" />
@@ -106,16 +201,16 @@ export const Update = () => {
             <Jumbotron className="jumbotron2" style={{marginTop: '100px'}} fluid>
                 <Container>
                 <Row>
-                    <Col>
+                    <Col className="col1">
                         <h1>Pobierz Zdrowie Covid</h1>
                         <p style={{marginTop: '20px'}}>
                         Więcej o działaniu aplikacji Zdrowie Covid <br /> znajdziesz w zakładce <a style={{fontSize: '20px', color: '#1300FF'}} href="#">Jak to działa.</a> 
                         </p>
                         <a href="#">
-                            <img src={image3} style={{height: '50px'}} />
+                            <img src={image3} className="img" style={{height: '50px'}} />
                         </a>
                         <a href="#">
-                            <img src={image4} style={{height: '50px', marginLeft: '30px'}} />
+                            <img src={image4} className="img" style={{height: '50px', marginLeft: '30px'}} />
                         </a>
                     </Col>
                     <Col style={{textAlign: 'center'}}>

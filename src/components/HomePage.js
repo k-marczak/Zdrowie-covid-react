@@ -8,8 +8,27 @@ const Styles = styled.div`
         text-align: center;
     }
 
+    h1{
+        @media screen and (max-width: 600px) {
+            font-size: 29px;
+        }   
+    }
+    p{
+        @media screen and (max-width: 600px) {
+            font-size: 14px;
+            width: 80%;
+            margin: 0 auto;
+        }   
+    }
+
     .image{
         height: 370px;
+        @media screen and (max-width: 1150px) {
+            height: 300px;
+        }   
+        @media screen and (max-width: 600px) {
+            height: 250px;
+        }   
     }
 
     .row{
@@ -42,7 +61,7 @@ export const HomePage = () => {
                     <Col className="col1">
                         <h1>Zostań w domu. Bądź bezpieczny</h1>
                         <p>Pierwszy przypadek zakażenia odnotowano w chińskim mieście Wuhan. Choroba w ciągu kilku miesięcy rozprzestrzeniła się na cały świat. Szacuje się, że około 70% wszystkich mieszkańców Ziemi zostanie zarażonych...</p>
-                        <Button variant="info">Info</Button>{' '}
+                        <Button variant="info" style={{marginTop: '13px'}}>Więcej</Button>{' '}
                     </Col>
                     <Col>
                         <img src={image} className="image" />

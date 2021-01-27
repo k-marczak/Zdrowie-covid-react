@@ -21,6 +21,10 @@ const Styles = styled.div`
         background: url(${image}) no-repeat fixed bottom;
         background-size: cover;
         z-index: -2;
+        @media screen and (max-width: 991px) {
+            position: relative;
+            top: -17px;
+        }  
     }
 
     .top{
@@ -46,6 +50,51 @@ const Styles = styled.div`
         font-weight: 500;
         font-size: 17px;
     }
+
+    .cards h3{
+        @media screen and (max-width: 1150px) {
+            font-size: 20px;
+        }  
+
+        
+    }
+    .cards p{
+        @media screen and (max-width: 1150px) {
+            font-size: 13px;
+            width: 99%;
+            margin: 0 auto 20px auto;
+        }  
+    }
+
+    .cards{
+
+        @media screen and (max-width: 800px){
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    .top{
+        @media screen and (max-width: 800px){
+            text-align: center;
+            margin: 0 auto;
+               
+        }
+    }
+
+    h1{
+        @media screen and (max-width: 650px) {
+            font-size: 32px;
+        }  
+    }
+    h2{
+        @media screen and (max-width: 650px) {
+            font-size: 26px !important;
+        }  
+    }
+
+    
     
 
 `;
@@ -81,7 +130,7 @@ export const About = () => {
             
             <Container>
                 <h1 style={{fontSize: '35px', marginTop: '50px',marginBottom: '20px', marginLeft: '10px' }}>Dowiedz się</h1>
-                <Row>
+                <Row className='cards'>
                     <Col>
                         <div className="top">
                             <GrMap size={42} style={{marginRight: '10px'}} />

@@ -1,20 +1,30 @@
 import React from 'react';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap'
 import styled from 'styled-components';
-import image1 from '../assets/Health/undraw_social_distancing_2g0u.png';
-import image2 from '../assets/Health/undraw_followers_4i0p.png';
-import image3 from '../assets/Health/undraw_medical_research_qg4d.png';
+import image1 from '../assets/card.svg';
+import image2 from '../assets/card2.svg';
+import image3 from '../assets/card3.svg';
 
 
 
 const Styles = styled.div`
+
+
+    h1{
+        @media screen and (max-width: 600px) {
+            font-size: 27px;
+            width: 80%;
+            margin: 0 auto;
+        }   
+    }
+
     .card-heading{
         margin-top: 170px;
         margin-bottom: 50px;   
     }
 
     .image{
-            max-height: 250px !important;
+            
             padding: 35px;
         }
 

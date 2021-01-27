@@ -8,6 +8,10 @@ const Styles = styled.div`
     .col{
         padding: 0 40px;
     }
+
+    @media screen and (max-width: 600px) {
+        
+    }
 `
 
 export const Contact = () => {
