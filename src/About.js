@@ -20,7 +20,7 @@ const Styles = styled.div`
 
 
     .jumbotron{
-        position: absolute;
+       
         width: 100vw;
         left: 0;
         right: 0;

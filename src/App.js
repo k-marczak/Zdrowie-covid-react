@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Router>
-        <Layout>
+
           <NavigationBar /> 
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -22,7 +22,7 @@ function App() {
                 <Route path="/contact" component={Contact} />
                 <Route component={NoMatch} />
               </Switch>
-          </Layout>        
+       
       </Router>
     </>
   );
