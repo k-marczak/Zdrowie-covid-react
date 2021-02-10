@@ -141,10 +141,6 @@ const Styles = styled.div`
         }
     }
 
-    .jumbotron2 .container .row {
-        
-    }
-
    
 `
 

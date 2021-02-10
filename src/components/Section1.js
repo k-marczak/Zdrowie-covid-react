@@ -28,6 +28,10 @@ const Styles = styled.div`
 
     .image{
         height: 500px;
+
+        @media screen and (max-width: 400px) {
+            height: 400px;
+        }
     }
 
 

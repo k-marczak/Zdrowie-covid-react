@@ -29,6 +29,10 @@ const Styles = styled.div`
         @media screen and (max-width: 600px) {
             height: 250px;
         }   
+
+        @media screen and (max-width: 400px) {
+            height: 200px;
+        }
     }
 
     .row{

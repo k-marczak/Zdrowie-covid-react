@@ -15,6 +15,11 @@ const Styles = styled.div`
         
             height: 72px;
         }
+
+             
+        @media screen and (max-width: 400px) {
+            width: 99%;
+        }
     }
 
     .navbar-brand, .navbar-nav .nav-link {
@@ -24,6 +29,10 @@ const Styles = styled.div`
             scale: 1.01;
             color: pink;
         }
+    }
+
+    .form-control{
+        margin: 10px 0;
     }
 
     
