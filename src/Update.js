@@ -47,6 +47,10 @@ const Styles = styled.div`
             margin-top: 40px;
             margin-right: 20px;
         }
+
+        @media screen and (max-width: 400px) {
+            height: 200px !important;
+        }
     }
 
     .jumbotron1{
@@ -67,7 +71,22 @@ const Styles = styled.div`
        flex-direction: column;
        align-content: space-between;
        justify-content: space-between;
+
+      
        
+   }
+
+   .cases .row2 h1{
+     @media screen and (max-width: 400px) {
+        font-size: 28px !important;
+       }
+   }
+
+
+   .cases .row2 p{
+     @media screen and (max-width: 400px) {
+        display: none;
+     }
    }
 
    .row2{
@@ -132,6 +151,10 @@ const Styles = styled.div`
         @media screen and (max-width: 1000px) {
             font-size: 28px;
         }
+
+        @media screen and (max-width: 400px) {
+            display: none;
+        }
                 
     }
 
@@ -139,6 +162,14 @@ const Styles = styled.div`
         @media screen and (max-width: 1000px) {
             height: 30px !important;
         }
+
+        
+    }
+
+    .mobile-image{
+        @media screen and (max-width: 400px) {
+        height: 200px !important;
+     }
     }
 
    
@@ -210,7 +241,7 @@ export const Update = () => {
                         </a>
                     </Col>
                     <Col style={{textAlign: 'center'}}>
-                        <img src={image5} style={{height: '250px', marginTop: '-30px'}} alt=""/>
+                        <img src={image5} style={{height: '250px', marginTop: '-30px'}} className="mobile-image" alt=""/>
                     </Col>
                 </Row>
                     

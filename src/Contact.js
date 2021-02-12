@@ -7,11 +7,30 @@ import Footer from './components/Footer';
 const Styles = styled.div`
     .col{
         padding: 0 40px;
+
+        @media screen and (max-width: 850px) {
+            margin: 20px 0;
+        }
     }
 
-    @media screen and (max-width: 600px) {
-        
+   
+
+
+    .row{
+
+        @media screen and (max-width: 850px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+
+        @media screen and (max-width: 400px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
     }
+
+    
 `
 
 export const Contact = () => {

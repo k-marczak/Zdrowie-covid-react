@@ -14,7 +14,7 @@ const Styles = styled.div`
     }
 
     .links p{
-        padding: 4px 15px;
+        padding: 2px 15px;
 
     }
 
@@ -25,6 +25,7 @@ const Styles = styled.div`
     .footer{
         text-align: center;
         margin-top: 30px;
+        width: 98%;
     }
 
     .brake{
