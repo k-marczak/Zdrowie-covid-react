@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Jumbotron, Button, Container, Alert, Row, Col  } from 'react-bootstrap';
 import image from './assets/image.jpg'
 import image2 from './assets/image2.jpg'
@@ -6,10 +6,14 @@ import image3 from './assets/it4.jpg'
 import { GrMap } from 'react-icons/gr';
 import { FcQuestions } from 'react-icons/fc';
 import { FaNewspaper } from 'react-icons/fa';
+import { TweenMax, Power3 } from 'gsap';
 
 
 import styled from 'styled-components'
 import Footer from './components/Footer';
+
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 const Styles = styled.div`
 
@@ -100,12 +104,32 @@ const Styles = styled.div`
 `;
 
 export const About = () => {
+
+    let header = useRef();
+
+    useEffect(() => {
+        Aos.init({duration: 1000})
+    }, [])
+
+    useEffect(() => {
+        TweenMax.to(
+            header,
+            1,
+            {
+                opacity: 1,
+                x: 20,
+                ease: Power3.easeOut
+            }
+        )
+    }, [])
+
+
     return (
         <Styles>
             
             <Jumbotron className="jumbotron1" fluid style={{marginTop: '72px'}}>
                 <div className="overlay"></div>
-                <Container>
+                <Container ref={el => {header = el}} style={{opacity: '0'}}>
                     <h1 style={{marginTop: '40px'}}> Potrzebujesz pomocy? </h1>
                     <h2>+48 123 431 432</h2>
                     <p>
@@ -171,16 +195,16 @@ export const About = () => {
             <Jumbotron className="jumbotron2" fluid>
                 <Container>
                     <h2 style={{fontSize: '32px'}}>Szczepienia przeciw COVID-19</h2>
-                    <p style={{marginTop: '30px'}}>
+                    <p style={{marginTop: '30px'}} data-aos="fade-right">
                     - w placówkach POZ
                     </p>
-                    <p>
+                    <p data-aos="fade-right"> 
                     - w innych placówkach medycznych
                     </p>
-                    <p>
+                    <p data-aos="fade-right">
                     - w mobilnych zespołach szczepiących
                     </p>
-                    <p>
+                    <p data-aos="fade-right">
                     - w centrach szczepiennych szpitali rezerwowych
                     </p>
 

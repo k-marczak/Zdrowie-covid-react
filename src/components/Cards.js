@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap'
 import styled from 'styled-components';
 import image1 from '../assets/card.svg';
 import image2 from '../assets/card2.svg';
 import image3 from '../assets/card3.svg';
+import { TweenMax, Power3} from 'gsap';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 
 
@@ -32,11 +35,16 @@ const Styles = styled.div`
 `
 
 export const Cards = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000, once: true })
+    }, []);
+
     return (
         <Styles>
             <Container>
                 <div className="card-heading">
-                    <h1>Najważniejsze informacje o koronawirusowej Kwarantannie</h1>
+                    <h1 data-aos="fade-up">Najważniejsze informacje o koronawirusowej Kwarantannie</h1>
                 </div>
                 <CardGroup>
                     <Card>

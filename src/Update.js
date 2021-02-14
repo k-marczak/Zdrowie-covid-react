@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import image from './assets/image.svg'
 import image1 from './assets/image-corona.jpg'
@@ -8,6 +8,10 @@ import image4 from './assets/iosPNG.png'
 import image5 from './assets/MobileApp.png'
 import styled from 'styled-components'
 import Footer from './components/Footer';
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+import {TweenMax, Power3} from 'gsap';
 
 
 const Styles = styled.div`
@@ -178,13 +182,33 @@ const Styles = styled.div`
 
 
 export const Update = () => {
+
+    let header = useRef();
+
+    useEffect(() => {
+        TweenMax.to(
+            header,
+            2,
+            {
+                opacity: 1,
+                x: 20,
+                ease: Power3.easeOut
+            }
+        )
+    }, []);
+
+    useEffect(() => {
+        Aos.init({ duration: 1000, once: true })
+    }, []);
+
+
     return (
         <Styles>
             <div style={{marginTop: '150px'}} />
             
             <Container>
                 <Row className="heroSection1">
-                    <Col className="col1">
+                    <Col ref={el => {header = el}} className="col1" style={{opacity: '0'}}>
                         <h1>Pokonajmy razem koronawirusa!</h1>
                         <h3>Ściągnij, uruchom – dbaj o siebie i innych.</h3>
                         <p>Zdrowie Covid to aplikacja, która skutecznie pomaga w ograniczaniu rozprzestrzeniania się koronawirusa. Korzysta z API opracowanego przez Apple i Google. Działa w oparciu o technologię Bluetooth, co ważne - nie korzysta z żadnych danych użytkowników. Wasza prywatność jest dla nas najważniejsza.</p>
@@ -213,7 +237,7 @@ export const Update = () => {
             <Container className="heroSection2" style={{marginTop: '100px'}}>
                 <Row>
                     <Col className="col2">
-                        <img src={image2} style={{height: '320px'}} className="image" />
+                        <img src={image2} style={{height: '320px'}} className="image" data-aos="fade-right" />
                     </Col>
 
                     <Col className="col1">
@@ -240,7 +264,7 @@ export const Update = () => {
                             <img src={image4} className="img" style={{height: '50px', marginLeft: '30px'}} />
                         </a>
                     </Col>
-                    <Col style={{textAlign: 'center'}}>
+                    <Col style={{textAlign: 'center'}} data-aos="fade-left">
                         <img src={image5} style={{height: '250px', marginTop: '-30px'}} className="mobile-image" alt=""/>
                     </Col>
                 </Row>

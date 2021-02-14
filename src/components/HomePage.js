@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import image from '../assets/Health/undraw_medicine_b1ol.png'
+
+import {TweenMax, Power3} from 'gsap';
+
+
+
 
 const Styles = styled.div`
     .col{
@@ -57,18 +62,76 @@ const Styles = styled.div`
 
 `
 
+
+
 export const HomePage = () => {
+
+    let logoItem = useRef(null);
+    let textItem = useRef(null);
+    let headItem = useRef(null);
+    let button = useRef(null);
+
+    
+
+    useEffect(() => {
+        console.log(logoItem)
+        TweenMax.to(
+            logoItem, 
+            .8,
+            {
+                opacity: 1,
+                y: -20,
+                case: Power3.easeOut
+            }
+        )
+        TweenMax.to(
+            textItem, 
+            .8,
+            {
+                opacity: 1,
+                y: -10,
+                case: Power3.easeOut,
+                delay: .6
+            }
+        )
+        TweenMax.to(
+            headItem, 
+            .8,
+            {
+                opacity: 1,
+                y: -15,
+                case: Power3.easeOut,
+                delay: .2
+            }
+        )
+        TweenMax.to(
+            button, 
+            .8,
+            {
+                opacity: 1,
+                y: -15,
+                case: Power3.easeOut,
+                delay: .9
+            }
+        )
+    }, [])
+
     return (
         <Styles>
             <Container>
-                <Row>
+                <Row style={{position: 'relative', top: '20px'}}>
                     <Col className="col1">
-                        <h1>Zostań w domu. Bądź bezpieczny</h1>
-                        <p>Pierwszy przypadek zakażenia odnotowano w chińskim mieście Wuhan. Choroba w ciągu kilku miesięcy rozprzestrzeniła się na cały świat. Szacuje się, że około 70% wszystkich mieszkańców Ziemi zostanie zarażonych...</p>
-                        <Button variant="info" style={{marginTop: '13px'}}>Więcej</Button>{' '}
+                        <h1 style={{opacity: '0', }} ref={el => {headItem = el}}>Zostań w domu. Bądź bezpieczny</h1>
+                        <p style={{opacity: '0'}} ref={el => {textItem = el}}>Pierwszy przypadek zakażenia odnotowano w chińskim mieście Wuhan. Choroba w ciągu kilku miesięcy rozprzestrzeniła się na cały świat. Szacuje się, że około 70% wszystkich mieszkańców Ziemi zostanie zarażonych...</p>
+                        <Button ref={el => {button = el}}  variant="info" style={{marginTop: '13px', opacity: '0'}}>Więcej</Button>{' '}
                     </Col>
                     <Col>
-                        <img src={image} className="image" />
+                        <img 
+                            src={image} 
+                            ref={el => {logoItem = el}} 
+                            className="image" 
+                            style={{opacity: '0'}}
+                        />
                     </Col>
                 </Row>
             </Container>

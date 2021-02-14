@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-bootstrap';
 import image1 from '../assets/Health/undraw_wash_hands_nwl2.png'
+import Aos from 'aos';
+import "aos/dist/aos.css";
+
 
 const Styles = styled.div`
     .section1{
@@ -52,6 +55,11 @@ const Styles = styled.div`
 
 
 export const section1 = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 1000, once: false })
+    }, []);
+    
     return (
         <Styles>
             <Container className="section1">
@@ -67,7 +75,7 @@ export const section1 = () => {
                         <ol>
                             <li>
              
-                                <p>
+                                <p data-aos="fade-left">
                                - Często myj ręce mydłem i wodą lub środkiem dezynfekującym na bazie 
                                 alkoholu (co najmniej 60%Zawartość alkoholu).
                                 
@@ -75,14 +83,14 @@ export const section1 = () => {
                             </li>
                             <li>
  
-                                <p>
+                                <p data-aos="fade-left">
                                 - Unikaj dotykania oczu, nosa i ust. Zakrywaj usta i nos.
                                 
                             </p>
                             </li>
                             <li>
            
-                                <p>
+                                <p data-aos="fade-left">
                                - Podczas kaszlu zakryj usta i nos zgięciem
                                 ramienia lub jednorazową chusteczkąlub kichnąć.
                                 
@@ -90,7 +98,7 @@ export const section1 = () => {
                             </li>
                             <li>
                  
-                                <p>
+                                <p data-aos="fade-left">
                                 - Trzymaj się z dala od chorych.
                                 
                             </p>
