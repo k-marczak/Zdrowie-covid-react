@@ -54,7 +54,7 @@ const Styles = styled.div`
 `
 
 
-export const section1 = () => {
+export const Section1 = () => {
 
     useEffect(() => {
         Aos.init({ duration: 1000, once: false })
@@ -111,4 +111,4 @@ export const section1 = () => {
     );
 };
 
-export default section1;
+export default Section1;
