@@ -15,6 +15,8 @@ Zdrowie Covid is a simple react-bootstrap page
 - react-icons
 - styled-components
 - react-bootstrap
+- Gsap
+- Aos
 
 ---
 
